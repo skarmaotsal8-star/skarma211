@@ -3,156 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        /* General Body & Background Styling */
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #333;
-        }
-
-        /* The main container for the login form */
-        .login-container {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            width: 100%;
-            max-width: 400px;
-            box-sizing: border-box;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Form styling */
-        .login-form {
-            text-align: center;
-        }
-
-        /* Logo Styling */
-        .logo {
-            max-width: 150px; /* Adjust size as needed */
-            margin-bottom: 20px;
-        }
-
-        /* Welcome Header */
-        .login-form h2 {
-            margin-bottom: 30px;
-            font-weight: 500;
-            font-size: 1.5rem;
-        }
-
-        /* Input field group */
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 14px 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .input-group input:focus {
-            outline: none;
-            border-color: #764ba2;
-            box-shadow: 0 0 8px rgba(118, 75, 162, 0.25);
-        }
-
-        .input-group input::placeholder {
-            color: #999;
-        }
-
-        /* Login Button */
-        button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background-color: #6a11cb;
-            background-image: linear-gradient(to right, #2575fc, #6a11cb);
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: opacity 0.3s ease, transform 0.2s;
-        }
-
-        button:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        /* Helper Links (Forgot Password, Create Account) */
-        .form-links {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .form-links a {
-            color: #6a11cb;
-            text-decoration: none;
-            transition: text-decoration 0.3s;
-        }
-
-        .form-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design for smaller screens */
-        @media (max-width: 480px) {
-            .login-container {
-                padding: 25px;
-                margin: 15px;
-            }
-
-            .login-form h2 {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    <title>YourStore - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="login-container">
-        <div class="login-form">
-            <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#6a11cb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="#6a11cb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="#6a11cb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-            <h2>Welcome Back</h2>
-
-            <form action="#" method="post">
-                <div class="input-group">
-                    <input type="text" id="username" name="username" placeholder="Username" required>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                </div>
-                <button type="submit">LOGIN</button>
-            </form>
-
-            <div class="form-links">
-                <a href="#">Forgot Password?</a>
-                <a href="#">Create Account</a>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">YourStore</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
             </div>
         </div>
-    </div>
+    </header>
 
+    <main>
+        <section class="featured-products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product-card" data-id="1">
+                        <img src="https://via.placeholder.com/300?text=T-Shirt" alt="T-Shirt">
+                        <h3>Classic T-Shirt</h3>
+                        <p class="price">₹799</p>
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-id="2">
+                        <img src="https://via.placeholder.com/300?text=Sneakers" alt="Sneakers">
+                        <h3>Stylish Sneakers</h3>
+                        <p class="price">₹2499</p>
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-id="3">
+                        <img src="https://via.placeholder.com/300?text=Watch" alt="Watch">
+                        <h3>Modern Watch</h3>
+                        <p class="price">₹4999</p>
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-id="4">
+                        <img src="https://via.placeholder.com/300?text=Backpack" alt="Backpack">
+                        <h3>Leather Backpack</h3>
+                        <p class="price">₹1999</p>
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 YourStore. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
